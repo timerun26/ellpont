@@ -13,7 +13,7 @@ function ujUgyfel() {
   const minutes = String(d.getMinutes()).padStart(2, '0');
   const seconds = String(d.getSeconds()).padStart(2, '0');
 
-let datum = ${year}-${month}-${day} ${hours}:${minutes}:${seconds};
+const datum = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
 
 
   db.run(
