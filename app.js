@@ -22,7 +22,7 @@ function listaFrissit() {
   if (res.length > 0) {
     for (let row of res[0].values) {
       html += `<div>
-        <b>${row[1]}</b> – ${row[3]}
+        <b>${row[1]}</b> – ${row[2]}
       </div>`;
     }
   }
