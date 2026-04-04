@@ -4,7 +4,7 @@ function ujUgyfel() {
   let nev = document.getElementById("nev").value;
   let cim = document.getElementById("cim").value;
 
-  let now = new Date(Date.now());
+  let d = new Date(Date.now());
   const year = d.getFullYear();
   const month = String(d.getMonth() + 1).padStart(2, '0'); 
   const day = String(d.getDate()).padStart(2, '0');
