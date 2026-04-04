@@ -26,7 +26,7 @@ const datum = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':'
 }
 
 function listaFrissit() {
-  let res = db.exec("SELECT * FROM ugyfelek ORDER BY id DESC");
+  let res = db.exec("SELECT * FROM ugyfelek ORDER BY id DESC limit=3");
 
   let html = "";
   if (res.length > 0) {
