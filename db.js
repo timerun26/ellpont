@@ -17,8 +17,7 @@ async function initDB() {
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nev TEXT,
         cim TEXT,
-        modositva TEXT,
-        sync INTEGER
+        modositva TEXT
       );
     `);
     saveDB();
