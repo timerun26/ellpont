@@ -139,8 +139,9 @@ x = szam;
 
 <h2>Kód beolvasás alap</h2>
 
-<input id="szoveg" placeholder="Szöveg">
-
+<input id="szoveg" name="szoveg" placeholder="Szöveg">
+<button onclick="ujUgyfel()">Mentés</button>
+	<br>
 <input type="button" class="gomb" id="g1" name ="g1" value="1" onclick="betu1('g1')">
   <input type="button" class="gomb" id="g2" name ="g2" value="2" onclick="betu1('g2')">
   <input type="button" class="gomb" id="g3" name ="g3" value="3" onclick="betu1('g3')"><BR>
@@ -150,8 +151,8 @@ x = szam;
   <input type="button" class="gomb" id="g7" name ="g7" value="7" onclick="betu1('g7')">
   <input type="button" class="gomb" id="g8" name ="g8" value="8" onclick="betu1('g8')">
   <input type="button" class="gomb" id="g9" name ="g9" value="9" onclick="betu1('g9')"><BR>
-  <input type="button" class="gomb0" id="g0" name ="g0" value="0" onclick="betu1('g0')">&nbsp;&nbsp;<button onclick="ujUgyfel()">KÜLDÉS</button>
-  
+  <input type="button" class="gomb0" id="g0" name ="g0" value="0" onclick="betu1('g0')">&nbsp;&nbsp;<button class="gombk" onclick="ujUgyfel()">KÜLDÉS</button>
+  <br>
 <script>
   const input = document.getElementById("szoveg");
 
@@ -161,7 +162,7 @@ x = szam;
     }
   });
 </script>
-  <button onclick="ujUgyfel()">Mentés</button>
+  
   <script>document.getElementById("szoveg").focus();</script>
 
 <hr>
