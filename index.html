@@ -141,6 +141,15 @@ x = szam;
 
 <input id="szoveg" name="szoveg" placeholder="Szöveg">
 <button onclick="ujUgyfel()">Mentés</button>
+	<script>
+  const input = document.getElementById("szoveg");
+
+  input.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      ujUgyfel();
+    }
+  });
+</script>
 	<br>
 <input type="button" class="gomb" id="g1" name ="g1" value="1" onclick="betu1('g1')">
   <input type="button" class="gomb" id="g2" name ="g2" value="2" onclick="betu1('g2')">
