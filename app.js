@@ -16,7 +16,7 @@ const datum = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':'
 
 
   db.run(
-    "INSERT INTO logok (adat, idopont, hely) VALUES (?, ?, 'EP1')",
+    "INSERT INTO logok (adat, idopont, hely) VALUES (?, ?, EP1)",
     [kod, datum]
   );
 
