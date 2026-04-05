@@ -17,8 +17,8 @@ const datum = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':'
 
 
 db.run( 
-"INSERT INTO logok (nev, modositva) VALUES (?, ?)", 
-[nev, idopont] ); 
+"INSERT INTO logok (nev, idopont) VALUES (?, ?)", 
+[nev, datum] ); 
 
 saveDB(); 
 listaFrissit(); 
