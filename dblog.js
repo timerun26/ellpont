@@ -7,6 +7,7 @@ async function initDB() {
   });
 
   let saved = localStorage.getItem("adatbazis");
+	alert("LOG 1");
 
   if (saved) {
     db = new SQL.Database(new Uint8Array(JSON.parse(saved)));
