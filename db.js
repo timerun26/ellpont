@@ -1,4 +1,3 @@
-
 let db;
 
 async function initDB() {
@@ -8,19 +7,18 @@ async function initDB() {
   });
 
   let saved = localStorage.getItem("adatbazis");
-	alert("LOG 1");
 
   if (saved) {
     db = new SQL.Database(new Uint8Array(JSON.parse(saved)));
   } else {
     db = new SQL.Database();
     db.run(`
-      CREATE TABLE logok (
+      CREATE TABLE ugyfelek (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-		hely TEXT,
-		adat TEXT,
-		idopont TEXT,
-		talalat TEXT
+        nev TEXT,
+        cim TEXT,
+        modositva TEXT,
+        sync INTEGER
       );
     `);
     saveDB();
