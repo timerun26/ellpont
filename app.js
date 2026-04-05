@@ -1,8 +1,7 @@
 initDB().then(() => listaFrissit());
 
 function beolv() {
-
-  alert('ITT 1');
+	
   let kod = document.getElementById("kod").value;
 
   let d = new Date(Date.now());
@@ -16,14 +15,16 @@ function beolv() {
 
 const datum = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
 
+alert(datum);
 
   db.run(
-    "INSERT INTO logok (adat, idopont, hely) VALUES (?, ?, EP1)",
+    "INSERT INTO logok (adat, idopont, hely) VALUES (?, ?)",
     [kod, datum]
   );
 
   saveDB();
   listaFrissit();
+  alert('ITT 2');
 }
 
 function listaFrissit() {
