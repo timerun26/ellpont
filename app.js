@@ -40,5 +40,6 @@ if (res.length > 0) {
 		} 
 		
 		document.getElementById("lista").innerHTML = html; 
+	    document.getElementById("nev").focus();
 		
 		} 
