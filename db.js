@@ -13,10 +13,9 @@ async function initDB() {
   } else {
     db = new SQL.Database();
     db.run(`
-      CREATE TABLE ugyfelek (
+      CREATE TABLE ugyfelek2 (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nev TEXT,
-        cim TEXT,
         modositva TEXT
       );
     `);
