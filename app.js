@@ -22,9 +22,13 @@ alert(datum);
     [kod, datum]
   );
 
+db.run( 
+	"INSERT INTO ugyfelek (nev, cim, modositva) VALUES (?, ?, ?)", [nev, cim, datum] ); 
+
+
   saveDB();
   listaFrissit();
-  alert('ITT 3');
+  alert('ITT ism');
 }
 
 function listaFrissit() {
@@ -39,6 +43,6 @@ function listaFrissit() {
     }
   }
   document.getElementById("lista").innerHTML = html;
-  document.getElementById("kod").focus();
+  
 
 }
