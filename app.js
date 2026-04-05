@@ -1,6 +1,8 @@
 initDB().then(() => listaFrissit());
 
 function beolv() {
+
+  alert('ITT 1');
   let kod = document.getElementById("kod").value;
 
   let d = new Date(Date.now());
