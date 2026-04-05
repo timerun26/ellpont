@@ -127,6 +127,14 @@ x = szam;
 		  document.getElementById("szoveg").value = document.getElementById("szoveg").value + document.getElementById("g9").value;
 	}
 
+  const input = document.getElementById("szoveg");
+
+  input.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      ujUgyfel();
+    }
+  });
+
 
 }
 
@@ -140,7 +148,6 @@ x = szam;
 <h2>Kód beolvasás alap</h2>
 
 <input id="szoveg" name="szoveg" placeholder="Szöveg">
-<button onclick="ujUgyfel()">Mentés</button>
 	<script>
   const input = document.getElementById("szoveg");
 
@@ -150,6 +157,8 @@ x = szam;
     }
   });
 </script>
+<button onclick="ujUgyfel()">Mentés</button>
+	
 	<br>
 <input type="button" class="gomb" id="g1" name ="g1" value="1" onclick="betu1('g1')">
   <input type="button" class="gomb" id="g2" name ="g2" value="2" onclick="betu1('g2')">
