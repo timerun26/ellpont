@@ -16,10 +16,8 @@ localStorage.removeItem("adatbazis");
     db.run(`
       CREATE TABLE logok (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-		hely TEXT,
-		adat TEXT,
-		idopont TEXT,
-		talalat TEXT
+        nev TEXT,
+        modositva TEXT
       );
     `);
     saveDB();
