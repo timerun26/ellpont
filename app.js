@@ -1,8 +1,7 @@
 initDB().then(() => listaFrissit());
 
-function ujUgyfel() {
-  let nev = document.getElementById("nev").value;
-  let cim = document.getElementById("cim").value;
+function beolv() {
+  let kod = document.getElementById("kod").value;
 
   let d = new Date(Date.now());
   const year = d.getFullYear();
@@ -17,8 +16,8 @@ const datum = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':'
 
 
   db.run(
-    "INSERT INTO ugyfelek (nev, cim, modositva, sync) VALUES (?, ?, ?, 0)",
-    [nev, cim, datum]
+    "INSERT INTO logok (adat, idopont, hely) VALUES (?, ?, 'EP1')",
+    [kod, datum]
   );
 
   saveDB();
@@ -26,15 +25,17 @@ const datum = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':'
 }
 
 function listaFrissit() {
-  let res = db.exec("SELECT * FROM ugyfelek ORDER BY id DESC limit 3");
+  let res = db.exec("SELECT * FROM logok ORDER BY id DESC limit 3");
 
   let html = "";
   if (res.length > 0) {
     for (let row of res[0].values) {
       html += `<div>
-        <b>${row[1]}</b> – ${row[3]}
+        <b>${row[2]}</b> – ${row[3]}
       </div>`;
     }
   }
   document.getElementById("lista").innerHTML = html;
+  document.getElementById("kod").focus();
+
 }
