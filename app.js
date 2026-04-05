@@ -1,10 +1,12 @@
-initDB().then(() => listaFrissit());
+initDB().then(() => listaFrissit()); 
 
-function beolv() {
-	
-  let kod = document.getElementById("kod").value;
+function ujUgyfel() { 
 
-  let d = new Date(Date.now());
+let nev = document.getElementById("nev").value; 
+let cim = document.getElementById("cim").value; 
+
+
+ let d = new Date(Date.now());
   const year = d.getFullYear();
   const month = String(d.getMonth() + 1).padStart(2, '0'); 
   const day = String(d.getDate()).padStart(2, '0');
@@ -15,34 +17,30 @@ function beolv() {
 
 const datum = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
 
-alert(datum);
-
-  db.run(
-    "INSERT INTO logok (adat, idopont, hely) VALUES (?, ?)",
-    [kod, datum]
-  );
 
 db.run( 
-	"INSERT INTO ugyfelek (nev, cim, modositva) VALUES (?, ?, ?)", [nev, cim, datum] ); 
+"INSERT INTO ugyfelek (nev, modositva) VALUES (?, ?, ?)", 
+[nev, datum] ); 
 
+saveDB(); 
+listaFrissit(); 
 
-  saveDB();
-  listaFrissit();
-  alert('ITT ism');
-}
+} 
 
-function listaFrissit() {
-  let res = db.exec("SELECT * FROM logok ORDER BY id DESC limit 3");
+function listaFrissit() { 
 
-  let html = "";
-  if (res.length > 0) {
-    for (let row of res[0].values) {
-      html += `<div>
-        <b>${row[2]}</b> – ${row[3]}
-      </div>`;
-    }
-  }
-  document.getElementById("lista").innerHTML = html;
-  
+let res = db.exec("SELECT * FROM ugyfelek ORDER BY id DESC"); 
 
-}
+let html = ""; 
+if (res.length > 0) { 
+	for (let row of res[0].values) { 
+	  html += `<div> 
+	    <b>${row[1]}</b> – ${row[2]} </div>`; 
+		
+		} 
+		
+		} 
+		
+		document.getElementById("lista").innerHTML = html; 
+		
+		} 
