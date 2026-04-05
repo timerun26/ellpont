@@ -24,7 +24,7 @@ alert(datum);
 
   saveDB();
   listaFrissit();
-  alert('ITT 2');
+  alert('ITT 3');
 }
 
 function listaFrissit() {
