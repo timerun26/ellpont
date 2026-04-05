@@ -14,10 +14,12 @@ localStorage.removeItem("adatbazis");
   } else {
     db = new SQL.Database();
     db.run(`
-      CREATE TABLE ugyfelek2 (
+      CREATE TABLE logok (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        nev TEXT,
-        modositva TEXT
+		hely TEXT,
+		adat TEXT,
+		idopont TEXT,
+		talalat TEXT
       );
     `);
     saveDB();
