@@ -2,7 +2,7 @@ initDB().then(() => listaFrissit());
 
 function ujUgyfel() { 
 
-let nev = document.getElementById("nev").value; 
+let szoveg = document.getElementById("szoveg").value; 
 
  let d = new Date(Date.now());
   const year = d.getFullYear();
@@ -17,13 +17,13 @@ const datum = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':'
 
 
 db.run( 
-"INSERT INTO logok (nev, modositva) VALUES (?, ?)", 
-[nev, datum] ); 
+"INSERT INTO logok (szoveg, modositva) VALUES (?, ?)", 
+[szoveg, datum] ); 
 
 saveDB(); 
 listaFrissit(); 
-document.getElementById("nev").value = '';
-document.getElementById("nev").focus();
+document.getElementById("szoveg").value = '';
+document.getElementById("szoveg").focus();
 
 } 
 
@@ -42,6 +42,6 @@ if (res.length > 0) {
 		} 
 		
 		document.getElementById("lista").innerHTML = html; 
-	    document.getElementById("nev").focus();
+	    document.getElementById("szoveg").focus();
 		
 		} 
