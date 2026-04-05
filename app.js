@@ -3,8 +3,6 @@ initDB().then(() => listaFrissit());
 function ujUgyfel() { 
 
 let nev = document.getElementById("nev").value; 
-let cim = document.getElementById("cim").value; 
-
 
  let d = new Date(Date.now());
   const year = d.getFullYear();
@@ -19,7 +17,7 @@ const datum = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':'
 
 
 db.run( 
-"INSERT INTO ugyfelek (nev, modositva) VALUES (?, ?, ?)", 
+"INSERT INTO ugyfelek (nev, modositva) VALUES (?, ?)", 
 [nev, datum] ); 
 
 saveDB(); 
@@ -29,13 +27,13 @@ listaFrissit();
 
 function listaFrissit() { 
 
-let res = db.exec("SELECT * FROM ugyfelek ORDER BY id DESC"); 
+let res = db.exec("SELECT * FROM ugyfelek ORDER BY id DESC limit 5"); 
 
 let html = ""; 
 if (res.length > 0) { 
 	for (let row of res[0].values) { 
 	  html += `<div> 
-	    <b>${row[1]}</b> – ${row[2]} </div>`; 
+	    <b>${row[1]}</b> – ${row[3]} </div>`; 
 		
 		} 
 		
