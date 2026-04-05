@@ -22,6 +22,7 @@ db.run(
 
 saveDB(); 
 listaFrissit(); 
+document.getElementById("nev").value = '';
 document.getElementById("nev").focus();
 
 } 
