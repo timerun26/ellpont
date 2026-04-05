@@ -17,8 +17,8 @@ const datum = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':'
 
 
 db.run( 
-"INSERT INTO ugyfelek2 (nev, modositva) VALUES (?, ?)", 
-[nev, datum] ); 
+"INSERT INTO logok (nev, modositva) VALUES (?, ?)", 
+[nev, idopont] ); 
 
 saveDB(); 
 listaFrissit(); 
@@ -27,13 +27,13 @@ listaFrissit();
 
 function listaFrissit() { 
 
-let res = db.exec("SELECT * FROM ugyfelek2 ORDER BY id DESC limit 5"); 
+let res = db.exec("SELECT * FROM logok ORDER BY id DESC limit 5"); 
 
 let html = ""; 
 if (res.length > 0) { 
 	for (let row of res[0].values) { 
 	  html += `<div> 
-	    <b>${row[1]}</b> – ${row[2]} </div>`; 
+	    <b>${row[2]}</b> – ${row[3]} </div>`; 
 		
 		} 
 		
