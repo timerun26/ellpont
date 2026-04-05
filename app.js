@@ -17,7 +17,7 @@ const datum = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':'
 
 
 db.run( 
-"INSERT INTO logok (nev, idopont) VALUES (?, ?)", 
+"INSERT INTO logok (nev, modositva) VALUES (?, ?)", 
 [nev, datum] ); 
 
 saveDB(); 
@@ -33,7 +33,7 @@ let html = "";
 if (res.length > 0) { 
 	for (let row of res[0].values) { 
 	  html += `<div> 
-	    <b>${row[2]}</b> – ${row[3]} </div>`; 
+	    <b>${row[1]}</b> – ${row[2]} </div>`; 
 		
 		} 
 		
