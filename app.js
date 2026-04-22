@@ -27,7 +27,7 @@ document.getElementById("szoveg").focus();
 
 } 
 
-function loguritk() {
+function logurit() {
 db.run("DELETE FROM logok");
 saveDB();
 }
