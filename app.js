@@ -27,6 +27,11 @@ document.getElementById("szoveg").focus();
 
 } 
 
+function loguritk() {
+db.run("DELETE FROM logok");
+saveDB();
+}
+
 function listaFrissit() { 
 
 let res = db.exec("SELECT * FROM logok ORDER BY id DESC limit 5"); 
